@@ -1,0 +1,172 @@
+{
+    "comment": "Measurement Configuration for Burst Loss",
+    "experiment": {
+        "iterations": 1,
+        "flow_tests": [
+            {
+                "src_host": "h1",
+                "dst_host": "h2",
+                "src_port": "10000",
+                "dst_port": "1234",
+                "description": "lossgemodel-5",
+                "link_configs": [
+                    {
+                        "link": "s1-eth1",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s1-eth2",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s3-eth1",
+                        "netem_args": "delay 10ms loss gemodel 0.20202% 20%"
+                    },
+                    {
+                        "link": "s3-eth2",
+                        "netem_args": "delay 10ms"
+                    }
+                ],
+                "synthetic_traffic": {
+                    "duration": 10,
+                    "packets": 550000
+                },
+                "measurement_techniques": {
+                    "spin": false,
+                    "delay_paper": false,
+                    "delay_draft": false,
+                    "t_rtpl": true,
+                    "q_square": true,
+                    "l_loss_event" : true,
+                    "r_reflection_square": true,
+                    "vec" : false
+                }
+            },
+            {
+                "src_host": "h1",
+                "dst_host": "h2",
+                "src_port": "10000",
+                "dst_port": "1234",
+                "description": "lossgemodel-10",
+                "link_configs": [
+                    {
+                        "link": "s1-eth1",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s1-eth2",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s3-eth1",
+                        "netem_args": "delay 10ms loss gemodel 0.10101% 10%"
+                    },
+                    {
+                        "link": "s3-eth2",
+                        "netem_args": "delay 10ms"
+                    }
+                ],
+                "synthetic_traffic": {
+                    "duration": 10,
+                    "packets": 550000
+                },
+                "measurement_techniques": {
+                    "spin": false,
+                    "delay_paper": false,
+                    "delay_draft": false,
+                    "t_rtpl": true,
+                    "q_square": true,
+                    "l_loss_event" : true,
+                    "r_reflection_square": true,
+                    "vec" : false
+                }
+            },
+            {
+                "src_host": "h1",
+                "dst_host": "h2",
+                "src_port": "10000",
+                "dst_port": "1234",
+                "description": "lossgemodel-15",
+                "link_configs": [
+                    {
+                        "link": "s1-eth1",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s1-eth2",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s3-eth1",
+                        "netem_args": "delay 10ms loss gemodel 0.06734% 6.66667%"
+                    },
+                    {
+                        "link": "s3-eth2",
+                        "netem_args": "delay 10ms"
+                    }
+                ],
+                "synthetic_traffic": {
+                    "duration": 10,
+                    "packets": 550000
+                },
+                "measurement_techniques": {
+                    "spin": false,
+                    "delay_paper": false,
+                    "delay_draft": false,
+                    "t_rtpl": true,
+                    "q_square": true,
+                    "l_loss_event" : true,
+                    "r_reflection_square": true,
+                    "vec" : false
+                }
+            },
+            {
+                "src_host": "h1",
+                "dst_host": "h2",
+                "src_port": "10000",
+                "dst_port": "1234",
+                "description": "lossgemodel-20",
+                "link_configs": [
+                    {
+                        "link": "s1-eth1",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s1-eth2",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s3-eth1",
+                        "netem_args": "delay 10ms loss gemodel 0.05050 5%"
+                    },
+                    {
+                        "link": "s3-eth2",
+                        "netem_args": "delay 10ms"
+                    }
+                ],
+                "synthetic_traffic": {
+                    "duration": 10,
+                    "packets": 550000  
+                },
+                "measurement_techniques": {
+                    "spin": false,
+                    "delay_paper": false,
+                    "delay_draft": false,
+                    "t_rtpl": true,
+                    "q_square": true,
+                    "l_loss_event" : true,
+                    "r_reflection_square": true,
+                    "vec" : false
+                }
+            }
+        ]
+    },
+    "hosts": {
+        "h1": {
+            "ip": "10.0.1.1"
+        },
+        "h2": {
+            "ip": "10.0.1.2"
+        }
+    }
+}

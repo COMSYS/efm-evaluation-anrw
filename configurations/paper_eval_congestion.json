@@ -1,0 +1,168 @@
+{
+    "comment": "Measurement Configuration for Flow Sizes",
+    "experiment": {
+        "iterations": 2,
+        "flow_tests": [
+            {
+                "src_host": "h1",
+                "dst_host": "h2",
+                "src_port": "10000",
+                "dst_port": "1234",
+                "description": "50k!lossrandom-1",
+                "link_configs": [
+                    {
+                        "link": "s1-eth1",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s1-eth2",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s3-eth1",
+                        "netem_args": "delay 10ms loss 1%"
+                    },
+                    {
+                        "link": "s3-eth2",
+                        "netem_args": "delay 10ms"
+                    }
+                ],
+                "http_traffic": {
+                    "file_size": "50k"
+                },
+                "measurement_techniques": {
+                    "spin": false,
+                    "delay_paper": false,
+                    "delay_draft": false,
+                    "t_rtpl": true,
+                    "q_square": true,
+                    "l_loss_event" : true,
+                    "r_reflection_square": true,
+                    "vec" : false
+                }
+            },
+            {
+                "src_host": "h1",
+                "dst_host": "h2",
+                "src_port": "10000",
+                "dst_port": "1234",
+                "description": "500k!lossrandom-1",
+                "link_configs": [
+                    {
+                        "link": "s1-eth1",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s1-eth2",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s3-eth1",
+                        "netem_args": "delay 10ms loss 1%"
+                    },
+                    {
+                        "link": "s3-eth2",
+                        "netem_args": "delay 10ms"
+                    }
+                ],
+                "http_traffic": {
+                    "file_size": "500k"
+                },
+                "measurement_techniques": {
+                    "spin": false,
+                    "delay_paper": false,
+                    "delay_draft": false,
+                    "t_rtpl": true,
+                    "q_square": true,
+                    "l_loss_event" : true,
+                    "r_reflection_square": true,
+                    "vec" : false
+                }
+            },
+            {
+                "src_host": "h1",
+                "dst_host": "h2",
+                "src_port": "10000",
+                "dst_port": "1234",
+                "description": "2M!lossrandom-1",
+                "link_configs": [
+                    {
+                        "link": "s1-eth1",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s1-eth2",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s3-eth1",
+                        "netem_args": "delay 10ms loss 1%"
+                    },
+                    {
+                        "link": "s3-eth2",
+                        "netem_args": "delay 10ms"
+                    }
+                ],
+                "http_traffic": {
+                    "file_size": "2M"
+                },
+                "measurement_techniques": {
+                    "spin": false,
+                    "delay_paper": false,
+                    "delay_draft": false,
+                    "t_rtpl": true,
+                    "q_square": true,
+                    "l_loss_event" : true,
+                    "r_reflection_square": true,
+                    "vec" : false
+                }
+            },
+            {
+                "src_host": "h1",
+                "dst_host": "h2",
+                "src_port": "10000",
+                "dst_port": "1234",
+                "description": "10M!lossrandom-1",
+                "link_configs": [
+                    {
+                        "link": "s1-eth1",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s1-eth2",
+                        "netem_args": "delay 10ms"
+                    },
+                    {
+                        "link": "s3-eth1",
+                        "netem_args": "delay 10ms loss 1%"
+                    },
+                    {
+                        "link": "s3-eth2",
+                        "netem_args": "delay 10ms"
+                    }
+                ],
+                "http_traffic": {
+                    "file_size": "10M"
+                },
+                "measurement_techniques": {
+                    "spin": false,
+                    "delay_paper": false,
+                    "delay_draft": false,
+                    "t_rtpl": true,
+                    "q_square": true,
+                    "l_loss_event" : true,
+                    "r_reflection_square": true,
+                    "vec" : false
+                }
+            }
+        ]
+    },
+    "hosts": {
+        "h1": {
+            "ip": "10.0.1.1"
+        },
+        "h2": {
+            "ip": "10.0.1.2"
+        }
+    }
+}

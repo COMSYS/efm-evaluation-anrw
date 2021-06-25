@@ -1,0 +1,6 @@
+__pycache__
+go_analysis/am-pcap-analyzer
+go_analysis/go.sum
+go_analysis/am-groundtruth-determinator
+go_analysis/analyse_queueMonitor
+traffic/htdocs/
